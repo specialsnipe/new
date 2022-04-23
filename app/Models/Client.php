@@ -15,9 +15,6 @@ class Client extends Model
     use Filterable;
     protected $guarded=false;
 
-    public function setDateAttribute($value){
-        $this->attributes['date']=Carbon::createFromFormat('d.m.y',$value)->format('Y-m-d');
-    }
     public function getDateAttribute($value){
         return Carbon::createFromFormat('Y-m-d',$value)->format('d.m.Y');
     }

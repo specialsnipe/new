@@ -9,13 +9,13 @@ use Illuminate\Database\Eloquent\Builder;
 class ClientFilter extends AbstractFilter
 {
     public const TITLE = 'title';
-    public const DATE_FROM = 'dateFrom';
-    public const DATE_TO = 'dateTo';
-    public const PRICE_FROM = 'priceFrom';
-    public const PRICE_TO = 'priceTo';
+    public const DATE_FROM = 'date_From';
+    public const DATE_TO = 'date_To';
+    public const PRICE_FROM = 'price_From';
+    public const PRICE_TO = 'price_To';
     public const REGION = 'region';
-    public const ORDER_BY_TITLE = 'orderByTitle';
-    public const ORDER_BY_PRICE = 'orderByPrice';
+    public const ORDER_BY_TITLE = 'order_By_Title';
+    public const ORDER_BY_PRICE = 'order_By_Price';
 
 
     protected function getCallbacks(): array
