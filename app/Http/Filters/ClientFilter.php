@@ -64,7 +64,7 @@ class ClientFilter extends AbstractFilter
 
     public function region(Builder $builder, $value)
     {
-        $builder->where('region', $value);
+        $builder->whereIn('region', $value);
     }
 
     public function OrderByTitle(Builder $builder, $value)

@@ -11,15 +11,15 @@ class IndexController extends Controller
 {
     public function __invoke(FilterRequest $request)
     {
-
         $data = $request->validated();
         $filter = app()->make(ClientFilter::class, ['queryParams' => array_filter($data)]);
 
         $clients = Client::filter($filter)->paginate(20);
 
+        $allClients = Client::all();
         $clientsCount = Client::onlyTrashed()->count();
 
 
-        return view('admin.client.index', compact('clients', 'clientsCount'));
+        return view('admin.client.index', compact('clients', 'clientsCount','allClients'));
     }
 }

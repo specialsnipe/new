@@ -1381,7 +1381,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 
 			// Support: Firefox <=3.6 - 5 only
 			// Old Firefox doesn't throw on a badly-escaped identifier.
-			el.querySelectorAll( "\\\f" );
+			el.querySelectorAll( "\\f" );
 			rbuggyQSA.push( "[\\r\\n\\f]" );
 		} );
 
@@ -9374,7 +9374,7 @@ jQuery.extend( {
 	ajaxPrefilter: addToPrefiltersOrTransports( prefilters ),
 	ajaxTransport: addToPrefiltersOrTransports( transports ),
 
-	// Main method
+	// main method
 	ajax: function( url, options ) {
 
 		// If url is an object, simulate pre-1.5 signature

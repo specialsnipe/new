@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Fertilizers;
 use App\Http\Controllers\Controller;
 use App\Http\Filters\FertilizerFilter;
 use App\Http\Requests\Admin\Fertilizers\FilterRequest;
+use App\Models\Crop;
 use App\Models\Fertilizer;
 
 class IndexController extends Controller
@@ -14,12 +15,12 @@ class IndexController extends Controller
         $data = $request->validated();
 
         $filter = app()->make(FertilizerFilter::class, ['queryParams' => array_filter($data)]);
-        $fertilizers = Fertilizer::filter($filter)->paginate(20);
-
+        $fertilizers = Fertilizer::filter($filter)->paginate(10);
 
 
         $fertilizersCount = Fertilizer::onlyTrashed()->count();
-       // $fertilizers = Fertilizer::paginate(10);
-        return view('admin.fertilizer.index', compact('fertilizers', 'fertilizersCount'));
+        $crops = Crop::all();
+        $allFertilizers=Fertilizer::all();
+        return view('admin.fertilizer.index', compact('fertilizers', 'fertilizersCount', 'crops','allFertilizers'));
     }
 }

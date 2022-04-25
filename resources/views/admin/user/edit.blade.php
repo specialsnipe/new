@@ -21,7 +21,7 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-        <!-- Main content -->
+        <!-- main content -->
         <section class="content">
             <div class="container-fluid">
                 <form action="{{route('admin.user.update',$user->id)}}" method="POST" class="w-50">
@@ -41,13 +41,14 @@
                         <div class="text-danger">{{$message}}</div>
                         @enderror
                     </div>
-            </div>
+
             <input type="submit" class="btn btn-primary" value="Изменить">
             </form>
 
-
+            </div>
+        </section>
     </div><!-- /.container-fluid -->
-    </section>
-    <!-- /.content -->
-    </div>
+
+
+
 @endsection

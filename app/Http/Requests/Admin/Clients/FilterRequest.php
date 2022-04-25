@@ -24,14 +24,14 @@ class FilterRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'string',
-            'date_From' => 'date',
-            'date_To' => 'date',
-            'price_From' => 'numeric',
-            'price_To' => 'numeric',
+            'title' => 'string|nullable',
+            'date_From' => 'date|nullable',
+            'date_To' => 'date|nullable',
+            'price_From' => 'numeric|nullable',
+            'price_To' => 'numeric|nullable',
             'region' => 'array',
-            'order_By_Title'=>'string',
-            'order_By_Price'=>'string',
+            'order_By_Title'=>'string|nullable',
+            'order_By_Price'=>'string|nullable',
         ];
     }
 

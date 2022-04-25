@@ -21,7 +21,7 @@
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
-        <!-- Main content -->
+        <!-- main content -->
         <section class="content">
             <div class="container-fluid">
                 <form action="{{route('admin.fertilizer.update',$fertilizer->id)}}" method="POST" class="w-50">

@@ -24,21 +24,21 @@ class FilterRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'string',
-            'norm_nitrogen_From' => 'numeric',
-            'norm_nitrogen_To' => 'numeric',
-            'norm_phosphorus_From' => 'numeric',
-            'norm_phosphorus_To' => 'numeric',
-            'norm_potassium_From' => 'numeric',
-            'norm_potassium_To' => 'numeric',
+            'title' => 'string|nullable',
+            'norm_nitrogen_From' => 'numeric|nullable',
+            'norm_nitrogen_To' => 'numeric|nullable',
+            'norm_phosphorus_From' => 'numeric|nullable',
+            'norm_phosphorus_To' => 'numeric|nullable',
+            'norm_potassium_From' => 'numeric|nullable',
+            'norm_potassium_To' => 'numeric|nullable',
             'crops_id' => 'array',
             'area' => 'array',
-            'price_From' => 'numeric',
-            'price_To' => 'numeric',
-            'description' => 'string',
-            'purpose' => 'string',
-            'order_By_Title' => 'string',
-            'order_By_Price' => 'string',
+            'price_From' => 'numeric|nullable',
+            'price_To' => 'numeric|nullable',
+            'description' => 'string|nullable',
+            'purpose' => 'string|nullable',
+            'order_By_Title' => 'string|nullable',
+            'order_By_Price' => 'string|nullable',
         ];
     }
 

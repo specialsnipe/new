@@ -20,7 +20,7 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
+    <!-- main content -->
     <section class="content">
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->

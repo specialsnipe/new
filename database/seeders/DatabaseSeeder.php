@@ -19,9 +19,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             Crops::class,
             UsersTableSeeder::class
+
         ]);
          Fertilizer::factory(400)->create();
-         Client::factory(200)->create();
+         Client::factory(30)->create();
 
     }
 }

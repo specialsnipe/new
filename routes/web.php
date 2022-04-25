@@ -21,7 +21,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
-    Route::group(['namespace' => 'Main'], function () {
+    Route::group(['namespace' => 'main'], function () {
         Route::get('/', 'IndexController')->name('admin.main.index');
     });
     Route::group(['namespace' => 'Crops', 'prefix' => 'crop'], function () {
