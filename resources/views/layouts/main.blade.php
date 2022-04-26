@@ -93,6 +93,11 @@
                                         </form>
                                     </li>
                                 @endauth
+                                    @auth()
+                                        <li>
+                                            {{auth()->user()->name}}
+                                        </li>
+                                    @endauth
                                 @guest()
                                     <li>
                                         <a href="{{route('login')}}" >Login</a>
