@@ -19,8 +19,12 @@ Auth::routes();
 Route::group(['namespace' => 'App\Http\Controllers\Main', ], function (){
     Route::get('/','IndexController')->name('main.index');
 });
-Route::group(['namespace' => 'App\Http\Controllers\Products', ], function (){
-    Route::get('/product','IndexController')->name('product.index');
+Route::group(['namespace' => 'App\Http\Controllers\Products','prefix'=>'product' ], function (){
+    Route::get('/','IndexController')->name('product.index');
+
+    Route::group(['namespace' => 'Crop','prefix'=>'{crop}'], function (){
+        Route::get('/','IndexController')->name('product.crop.index');
+    });
 });
 
 
