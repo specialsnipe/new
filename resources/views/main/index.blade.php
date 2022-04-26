@@ -1,21 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-<!--  <div class="pa-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-6">
-                    <div class="pa-banner-text">
-                        <h4 class="pa-banner-category">Aloevera Cream</h4>
-                        <h2>Lorem ipsum dolor sit amet consectetur adipiscing elit</h2>
-                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <a href="javascript:;" class="pa-view-all">view all</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- banner end -->
+
 <!-- top medicine start -->
 <div class="pa-medicine spacer-top spacer-bottom">
     <div class="container">
