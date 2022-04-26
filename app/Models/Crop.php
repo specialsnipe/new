@@ -12,4 +12,8 @@ class Crop extends Model
     use SoftDeletes;
 
     protected $guarded = false;
+
+    public function fertilizers(){
+        return $this->hasMany(Fertilizer::class,'crops_id','id');
+    }
 }
