@@ -147,17 +147,17 @@
                         </div>
                     </div>
 
-                        <div class="form-inline">
-                            <label class="ml-5">Цена</label>
-                            <input type="text" class="form-control  ml-1 mt-3" name="price_From" placeholder="от"
-                                   value="{{request()->price_From}}">
-                        </div>
+                    <div class="form-inline">
+                        <label class="ml-5">Цена</label>
+                        <input type="text" class="form-control  ml-1 mt-3" name="price_From" placeholder="от"
+                               value="{{request()->price_From}}">
+                    </div>
 
-                        <div class="form-inline">
-                            <label class="ml-3"></label>
-                            <input type="text" class="form-control ml-1 mt-3" name="price_To" placeholder="до"
-                                   value="{{request()->price_To}}">
-                        </div>
+                    <div class="form-inline">
+                        <label class="ml-3"></label>
+                        <input type="text" class="form-control ml-1 mt-3" name="price_To" placeholder="до"
+                               value="{{request()->price_To}}">
+                    </div>
 
 
                 </div>
@@ -169,6 +169,37 @@
                     <a href="{{route('admin.fertilizer.index')}}">Сбросить</a>
                 </div>
             </form>
+            <div class="row">
+                <div class="col-6 w-50 mr">
+                    <form action="{{route('admin.fertilizer.excel.import')}}" method="post"
+                          enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group">
+                            <label for="exampleInputFile" class="ml-3">Импорт excel таблицы</label>
+                            <div class="input-group">
+                                <div class="custom-file ml-3 mb-3">
+                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="file">
+                                    <label class="custom-file-label" for="exampleInputFile">Выберете excel
+                                        таблицу</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text mb-3">Загрузка</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary ml-3 " value="Загрузить таблицу">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="ml-3 w-50">
+                <a href="{{route('admin.fertilizer.excel.export')}}"
+                   class="btn btn-block btn-success">Export excel таблицы</a>
+
+            </div>
 
 
             <!-- /.content-header -->

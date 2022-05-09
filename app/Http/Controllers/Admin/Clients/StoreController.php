@@ -11,7 +11,6 @@ class StoreController extends Controller
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
-
         Client::firstOrCreate($data);
         return redirect()->route('admin.client.index');
     }

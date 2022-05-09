@@ -14,24 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
 Auth::routes();
-Route::group(['namespace' => 'App\Http\Controllers\Main', ], function (){
-    Route::get('/','IndexController')->name('main.index');
+Route::group(['namespace' => 'App\Http\Controllers\Main',], function () {
+    Route::get('/', 'IndexController')->name('main.index');
 });
-Route::group(['namespace' => 'App\Http\Controllers\Products','prefix'=>'product' ], function (){
-    Route::get('/','IndexController')->name('product.index');
+Route::group(['namespace' => 'App\Http\Controllers\Products', 'prefix' => 'product'], function () {
+    Route::get('/', 'IndexController')->name('product.index');
 
-    Route::group(['namespace' => 'Crop','prefix'=>'{crop}'], function (){
-        Route::get('/','IndexController')->name('product.crop.index');
+    Route::group(['namespace' => 'Crop', 'prefix' => '{crop}'], function () {
+        Route::get('/', 'IndexController')->name('product.crop.index');
     });
 });
-
 
 
 Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController')->name('admin.main.index');
+    });
+    Route::group(['namespace' => 'Status', 'prefix' => 'status'], function () {
+        Route::get('/', 'IndexController')->name('admin.status.index');
     });
     Route::group(['namespace' => 'Crops', 'prefix' => 'crop'], function () {
         Route::get('/', 'IndexController')->name('admin.crop.index');
@@ -51,6 +52,15 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
         Route::patch('/{client}', 'UpdateController')->name('admin.client.update');
         Route::delete('/{client}', 'DeleteController')->name('admin.client.delete');
 
+        Route::group(['namespace' => 'Excel', 'prefix' => 'excel'], function () {
+            Route::get('/export', 'ExportController')->name('admin.client.excel.export');
+            Route::post('/import', 'ImportController')->name('admin.client.excel.import');
+        });
+        Route::group(['namespace' => 'Word', 'prefix' => 'word'], function () {
+            Route::get('/export/{id}', 'ExportController')->name('admin.client.word.export');
+        });
+
+
     });
     Route::group(['namespace' => 'Fertilizers', 'prefix' => 'fertilizer'], function () {
         Route::get('/', 'IndexController')->name('admin.fertilizer.index');
@@ -60,7 +70,13 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin', 
         Route::get('/{fertilizer}/edit', 'EditController')->name('admin.fertilizer.edit');
         Route::patch('/{fertilizer}', 'UpdateController')->name('admin.fertilizer.update');
         Route::delete('/{fertilizer}', 'DeleteController')->name('admin.fertilizer.delete');
+        Route::group(['namespace' => 'Excel', 'prefix' => 'excel'], function () {
+            Route::get('/export', 'ExportController')->name('admin.fertilizer.excel.export');
+            Route::post('/import', 'ImportController')->name('admin.fertilizer.excel.import');
+        });
     });
+
+
     Route::group(['namespace' => 'Users', 'prefix' => 'user'], function () {
         Route::get('/', 'IndexController')->name('admin.user.index');
         Route::get('/create', 'CreateController')->name('admin.user.create');

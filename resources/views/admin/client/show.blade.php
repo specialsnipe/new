@@ -70,9 +70,12 @@
                                 <td>Регион</td>
                                 <td>{{$client->region}}</td>
                             </tr>
-
                             </tbody>
                         </table>
+                        <div>
+                            <a href="{{route('admin.client.word.export',$client->id)}}"
+                               class="btn btn-block btn-success">Скачать документ</a>
+                        </div>
                     </div>
                     <!-- /.card-body -->
                 </div>

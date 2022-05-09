@@ -112,15 +112,45 @@
                         </div>
                     </div>
                 </div>
-
-
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary ml-3 " value="Сортировка">
-                </div>
-                <div class="ml-3">
-                    <a href="{{route('admin.client.index')}}">Сбросить</a>
+                <div class="row">
+                    <div class="col-6 w-50">
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary ml-3 " value="Сортировка">
+                        </div>
+                        <div class="ml-3 mb-3">
+                            <a href="{{route('admin.client.index')}}">Сбросить</a>
+                        </div>
+                    </div>
                 </div>
             </form>
+
+            <div class="col-3 mr">
+                <form action="{{route('admin.client.excel.import')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <label for="exampleInputFile">Импорт excel таблицы</label>
+                        <div class="input-group">
+                            <div class="custom-file ml-3 mb-3">
+                                <input type="file" class="custom-file-input" id="exampleInputFile" name="file">
+                                <label class="custom-file-label" for="exampleInputFile">Выберете excel
+                                    таблицу</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text mb-3">Загрузка</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary ml-3 " value="Загрузить таблицу">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="ml-3 w-50">
+            <a href="{{route('admin.client.excel.export')}}"
+               class="btn btn-block btn-success">Export excel таблицы</a>
 
         </div>
 

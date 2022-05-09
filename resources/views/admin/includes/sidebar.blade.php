@@ -42,6 +42,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('admin.status.index' )}}" class="nav-link">
+                    <i class="nav-icon far fa-address-card"></i>
+                    <p>
+                        Таблица импорт-статус
+                    </p>
+                </a>
+            </li>
         </ul>
         <!-- /.sidebar-menu -->
     </div>
