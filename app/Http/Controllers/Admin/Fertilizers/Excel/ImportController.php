@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\Fertilizers\Excel;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Fertilizers\ImportRequest;
 use App\Jobs\ImportExcelFertilizersJob;
 use App\Models\ImportStatus;
 use Illuminate\Http\Request;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ImportController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(ImportRequest $request)
     {
         $path = Storage::disk('public')->put('/filesExcel', $request['file']);
 

@@ -188,6 +188,9 @@
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary ml-3 " value="Загрузить таблицу">
+                                @error('file')
+                                <div class="text-danger">{{$message}}</div>
+                                @enderror
                             </div>
 
                         </div>
