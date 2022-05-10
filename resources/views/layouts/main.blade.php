@@ -2,12 +2,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pure Ayurveda - Responsive HTML Template</title>
-    <link rel="stylesheet" href="{{asset('public/assets/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets/css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets/css/font.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets/css/swiper.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets/css/style.css')}}">
-    <link rel="shortcut icon" href="{{asset('public/assets/images/fav.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset('/assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/font.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/swiper.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/style.css')}}">
+    <link rel="shortcut icon" href="{{asset('/assets/images/fav.png')}}" type="image/x-icon">
 </head>
 <body>
 <!-- pre loader start -->
@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-md-3 col-6">
                     <div class="pa-logo">
-                        <a href="#"><img src="{{asset('public/assets/images/logo.svg')}}" alt="image" class="img-fluid"></a>
+                        <a href="#"><img src="{{asset('/assets/images/logo.svg')}}" alt="image" class="img-fluid"></a>
                     </div>
                 </div>
                 <div class="col-md-9 col-6">
@@ -192,7 +192,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="pa-foot-box pa-foot-subscribe">
-                        <img src="{{asset('public/assets/images/logo.svg')}}" alt="image" class="img-fluid">
+                        <img src="{{asset('/assets/images/logo.svg')}}" alt="image" class="img-fluid">
                         <div class="pa-newsletter">
                             <form>
                                 <input type="text" placeholder="Subscribe newsletter">
@@ -303,10 +303,10 @@
 </div>
 <!-- main wrapper end -->
 
-<script src="{{asset('public/assets/js/jquery.min.js')}}"></script>
-<script src="{{asset('public/assets/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('public/assets/js/SmoothScroll.min.js')}}"></script>
-<script src="{{asset('public/assets/js/swiper.min.js')}}"></script>
-<script src="{{asset('public/assets/js/custom.js')}}"></script>
+<script src="{{asset('/assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('/assets/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('/assets/js/SmoothScroll.min.js')}}"></script>
+<script src="{{asset('/assets/js/swiper.min.js')}}"></script>
+<script src="{{asset('/assets/js/custom.js')}}"></script>
 
 </body></html>

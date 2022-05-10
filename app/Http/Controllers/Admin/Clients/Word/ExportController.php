@@ -30,7 +30,7 @@ class ExportController extends Controller
         ]);
 
         $objWriter = IOFactory::createWriter($phpWord, 'Word2007');
-        $objWriter->save(storage_path('word\\' . $client->title . '.docx'));
-        return response()->download(storage_path('word\\' . $client->title . '.docx'));
+        $objWriter->save(storage_path('word/' . $client->title . '.docx'));
+        return response()->download(storage_path('word/' . $client->title . '.docx'));
     }
 }
